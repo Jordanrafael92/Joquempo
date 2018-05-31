@@ -2,6 +2,7 @@ package com.example.jordansilva.joquemp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -9,11 +10,22 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+    private ImageView imageResultado;
+    private int cont;
+    private TextView textoResultado;
+    private TextView textContUsuario;
+    private TextView textContApp;
+    private String[] opcoes = {"Pedra", "Papel", "Tesoura"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        imageResultado = (ImageView) findViewById(R.id.imageResultado);
+        textoResultado = (TextView) findViewById(R.id.textResultado);
+        textContUsuario = findViewById(R.id.textContUsuario);
+        textContApp = findViewById(R.id.textContApp);
     }
 
     public void selecionarPedra( View view){
@@ -29,10 +41,9 @@ public class MainActivity extends AppCompatActivity {
         this.opcaoSelecionada("Tesoura");
     }
 
+
     public void opcaoSelecionada(String escolhaUsuario){
-        ImageView imageResultado = (ImageView) findViewById(R.id.imageResultado);
-        TextView textoResultado = (TextView) findViewById(R.id.textResultado);
-        String[] opcoes = {"Pedra", "Papel", "Tesoura"};
+
 
         int numero = new Random().nextInt(3);
         String escolhaApp = opcoes[numero];
@@ -47,22 +58,31 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (
-                (escolhaApp == "Pedra" && escolhaUsuario == "Tesoura") ||
-                (escolhaApp == "Papel" && escolhaUsuario == "Pedra")   ||
-                (escolhaApp == "Tesoura" && escolhaUsuario == "Papel")
+                (escolhaApp.equals("Pedra")  && escolhaUsuario.equals("Tesoura")) ||
+                        (escolhaApp.equals("Papel") && escolhaUsuario.equals("Pedra"))   ||
+                        (escolhaApp.equals("Tesoura") && escolhaUsuario.equals("Papel"))
 
-                ) {textoResultado.setText("Você perdeu!!"); }
+                ) {textoResultado.setText("Você perdeu!!");
 
-            else if (
+                cont = Integer.parseInt(textContApp.getText().toString() ) + 1;
+                textContApp.setText(String.valueOf(cont) ) ;
+                Log.d("Teste", "Cont: " + cont);
+        }
 
-                (escolhaUsuario == "Pedra" && escolhaApp == "Tesoura") ||
-                (escolhaUsuario == "Papel" && escolhaApp == "Pedra")   ||
-                (escolhaUsuario == "Tesoura" && escolhaApp == "Papel")
+        else if (
 
-                ) {textoResultado.setText("Você foi o ganhador!"); }
+                (escolhaUsuario.equals("Pedra") && escolhaApp.equals("Tesoura")) ||
+                        (escolhaUsuario.equals("Papel") && escolhaApp.equals("Pedra"))   ||
+                        (escolhaUsuario.equals("Tesoura") && escolhaApp.equals("Papel"))
 
-            else
+                ) {textoResultado.setText("Você foi o ganhador!");
+
+        }
+
+        else
         {textoResultado.setText("Empatamos!"); }
+
+
     }
 
 }

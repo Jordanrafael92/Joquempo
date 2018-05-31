@@ -4,71 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
 
+
+    <TextView
+        android:id="@+id/textPlacar3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="141dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginStart="38dp"
+        android:text="Placar:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textPlacarApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Máquina:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textPlacarUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/textPlacarUsuario" />
+
+    <TextView
+        android:id="@+id/textPlacarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Usuário:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textPlacar3"
+        app:layout_constraintTop_toBottomOf="@+id/textPlacar3" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="19dp"
-        android:layout_marginTop="34dp"
         android:text="Escolha do APP"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageResultado"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textResultado"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="314dp"
+        android:layout_height="21dp"
+        android:layout_marginBottom="19dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginStart="27dp"
         android:text="Escolha uma das opções abaixo"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageResultado" />
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView2" />
 
     <ImageView
         android:id="@+id/imageResultado"
         android:layout_width="75dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="31dp"
-        app:layout_constraintBottom_toTopOf="@+id/textResultado"
+        android:layout_height="64dp"
+        android:layout_marginBottom="76dp"
+        android:layout_marginTop="78dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/padrao" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="0dp"
         android:layout_height="75dp"
-        android:layout_marginEnd="149dp"
+        android:layout_marginEnd="37dp"
         android:layout_marginLeft="38dp"
-        android:layout_marginRight="149dp"
+        android:layout_marginRight="37dp"
         android:layout_marginStart="38dp"
         android:onClick="selecionarPedra"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
         app:srcCompat="@drawable/pedra" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="75dp"
+        android:layout_width="0dp"
         android:layout_height="75dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
         android:onClick="selecionarPapel"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/papel" />
 
@@ -76,13 +112,35 @@
         android:id="@+id/imageView4"
         android:layout_width="0dp"
         android:layout_height="75dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginRight="38dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
         android:onClick="selecionarTesoura"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
         app:srcCompat="@drawable/tesoura" />
+
+    <TextView
+        android:id="@+id/textContUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/textPlacarUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/textPlacar3" />
+
+    <TextView
+        android:id="@+id/textContApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/textPlacarApp"
+        app:layout_constraintTop_toBottomOf="@+id/textPlacarUsuario" />
+
 </android.support.constraint.ConstraintLayout>
