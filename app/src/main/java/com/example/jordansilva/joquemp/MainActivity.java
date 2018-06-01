@@ -12,6 +12,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     private ImageView imageResultado;
     private int cont;
+    private int contUser;
     private TextView textoResultado;
     private TextView textContUsuario;
     private TextView textContApp;
