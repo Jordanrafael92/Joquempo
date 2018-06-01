@@ -10,12 +10,14 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+    private int contEmpate = 0;
+    private int cont = 0;
+    private int contUser = 0;
     private ImageView imageResultado;
-    private int cont;
-    private int contUser;
     private TextView textoResultado;
     private TextView textContUsuario;
     private TextView textContApp;
+    private TextView textContEmpate;
     private String[] opcoes = {"Pedra", "Papel", "Tesoura"};
 
     @Override
@@ -27,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
         textoResultado = (TextView) findViewById(R.id.textResultado);
         textContUsuario = findViewById(R.id.textContUsuario);
         textContApp = findViewById(R.id.textContApp);
+        textContEmpate = findViewById(R.id.textContEmpate);
     }
 
     public void selecionarPedra( View view){
         this.opcaoSelecionada("Pedra");
-
     }
 
     public void selecionarPapel(View view){
@@ -42,10 +44,7 @@ public class MainActivity extends AppCompatActivity {
         this.opcaoSelecionada("Tesoura");
     }
 
-
     public void opcaoSelecionada(String escolhaUsuario){
-
-
         int numero = new Random().nextInt(3);
         String escolhaApp = opcoes[numero];
 
@@ -60,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (
                 (escolhaApp.equals("Pedra")  && escolhaUsuario.equals("Tesoura")) ||
-                        (escolhaApp.equals("Papel") && escolhaUsuario.equals("Pedra"))   ||
-                        (escolhaApp.equals("Tesoura") && escolhaUsuario.equals("Papel"))
+                (escolhaApp.equals("Papel") && escolhaUsuario.equals("Pedra"))   ||
+                (escolhaApp.equals("Tesoura") && escolhaUsuario.equals("Papel"))
 
                 ) {textoResultado.setText("Você perdeu!!");
 
@@ -73,16 +72,23 @@ public class MainActivity extends AppCompatActivity {
         else if (
 
                 (escolhaUsuario.equals("Pedra") && escolhaApp.equals("Tesoura")) ||
-                        (escolhaUsuario.equals("Papel") && escolhaApp.equals("Pedra"))   ||
-                        (escolhaUsuario.equals("Tesoura") && escolhaApp.equals("Papel"))
+                (escolhaUsuario.equals("Papel") && escolhaApp.equals("Pedra"))   ||
+                (escolhaUsuario.equals("Tesoura") && escolhaApp.equals("Papel"))
 
                 ) {textoResultado.setText("Você foi o ganhador!");
+
+                contUser = Integer.parseInt(textContUsuario.getText().toString() ) + 1;
+                textContUsuario.setText(String.valueOf(contUser) );
+                Log.d("Teste cont Usuario", "Cont Usuario: " + contUser);
 
         }
 
         else
-        {textoResultado.setText("Empatamos!"); }
-
+        {textoResultado.setText("Empatamos!");
+            contEmpate = Integer.parseInt(textContEmpate.getText().toString() ) + 1;
+            textContEmpate.setText(String.valueOf(contEmpate));
+            Log.d("Teste cont Empate", "Cont Empate: " + contEmpate);
+        }
 
     }
 

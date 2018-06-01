@@ -58,23 +58,26 @@
     <TextView
         android:id="@+id/textResultado"
         android:layout_width="wrap_content"
-        android:layout_height="21dp"
+        android:layout_height="33dp"
         android:layout_marginBottom="19dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="27dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="27dp"
+        android:layout_marginTop="8dp"
         android:text="Escolha uma das opções abaixo"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/imageView2" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageResultado" />
 
     <ImageView
         android:id="@+id/imageResultado"
         android:layout_width="75dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="76dp"
         android:layout_marginTop="78dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -85,9 +88,9 @@
         android:layout_width="0dp"
         android:layout_height="75dp"
         android:layout_marginEnd="37dp"
-        android:layout_marginLeft="38dp"
+        android:layout_marginLeft="37dp"
         android:layout_marginRight="37dp"
-        android:layout_marginStart="38dp"
+        android:layout_marginStart="37dp"
         android:onClick="selecionarPedra"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView3"
@@ -129,6 +132,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="0"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textPlacarUsuario"
         app:layout_constraintTop_toBottomOf="@+id/textPlacar3" />
 
@@ -140,7 +145,37 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="0"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textPlacarApp"
         app:layout_constraintTop_toBottomOf="@+id/textPlacarUsuario" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="8dp"
+        android:text="Empate:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textPlacarApp"
+        app:layout_constraintTop_toBottomOf="@+id/textPlacarApp"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textContEmpate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textPlacarApp" />
+
 
 </android.support.constraint.ConstraintLayout>
